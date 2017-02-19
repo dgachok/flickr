@@ -1,0 +1,6 @@
+<div class="gallery">
+  <div class="gallery__item" (click)="toggleStore(image)" *ngFor="let image of images">
+    <img class="item__img" src="https://farm{{image['farm']}}.staticflickr.com/{{image['server']}}/{{image['id']}}_{{image['secret']}}_m.jpg">
+    <div class="item__title">{{image['title']}}</div>
+  </div>
+</div>

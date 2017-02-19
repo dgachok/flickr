@@ -1,3 +1,13 @@
 <h1>
-  {{title}}
+  Flickr
 </h1>
+<a href="{{AUTH_LINK}}">Login</a>
+<div class="search">
+  <input #searchValue (keypress)="search($event, searchValue.value)">Search
+</div>
+<div class="tabs">
+  <a class="tabs__item" routerLink="/home" routerLinkActive="active">Home</a>
+  <a class="tabs__item" routerLink="/store" routerLinkActive="active">Show Gallery</a>
+</div>
+<router-outlet></router-outlet>
+
