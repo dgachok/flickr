@@ -17,6 +17,7 @@ export class AppComponent {
 
   search(e, query) {
     if (e.keyCode >= 0 && e.keyCode !== 13 || !query) return;
+    this.searchService.spinner = true;
     this.searchService.getImages(query).subscribe(data => this.router.navigate(['/home']));
   }
 }

@@ -1,13 +1,23 @@
-<h1>
-  Flickr
-</h1>
-<a href="{{AUTH_LINK}}">Login</a>
-<div class="search">
-  <input #searchValue (keypress)="search($event, searchValue.value)">Search
+<div class="wrapper">
+  <div class="header">
+    <div class="header__content">
+    <h1>
+      Flickr for Playtech
+    </h1>
+    <a class="login" href="{{AUTH_LINK}}">Login</a>
+  </div>
+  </div>
+  <div class="wrapper__content">
+    <div class="container">
+      <div class="search__wrapper">
+        <input class="search" #searchValue (keypress)="search($event, searchValue.value)">
+        <span class="search__icon" (click)="search($event, searchValue.value)"><img src="../assets/icons/search.png"></span>
+      </div>
+      <div class="tabs">
+        <a class="tabs__item" routerLink="/home" routerLinkActive="active">Home</a>
+        <a class="tabs__item" routerLink="/store" routerLinkActive="active">Show Gallery</a>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-<div class="tabs">
-  <a class="tabs__item" routerLink="/home" routerLinkActive="active">Home</a>
-  <a class="tabs__item" routerLink="/store" routerLinkActive="active">Show Gallery</a>
-</div>
-<router-outlet></router-outlet>
-

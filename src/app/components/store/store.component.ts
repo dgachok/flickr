@@ -3,7 +3,7 @@ import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-store',
-  template: `<h1>store works!</h1>
+  template: `<h2 class="margin_bottom_10">Gallery</h2>
 <gallery [images]="searchService.store"></gallery>`,
   styleUrls: ['./store.component.scss']
 })

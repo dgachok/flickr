@@ -1,0 +1,128 @@
+:host{
+  display: flex;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  background: #ff0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 100;
+}
+.header__content{
+  margin: 0 auto;
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+.wrapper__content{
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  justify-content: space-around;
+  background: #fff;
+  transition: background 1.2s ease-out;
+  transform: translateZ(0);
+}
+.wrapper{
+  padding-top: 100px;
+  width: 100%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.container {
+  width: 100%;
+  max-width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  background: hsla(0,0%,100%,.95);
+  transform: translateZ(0);
+}
+.login{
+  font-size: 15pt;
+  font-weight: 600;
+  color: #000;
+}
+.search__wrapper{
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+.search{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  padding: 5px 40px 5px 10px;
+  font-weight: normal;
+  box-shadow: inset 0 2px 5px rgba(1, 1, 1, 0.05);
+  font-size: 15pt;
+  color: #666;
+  &:focus{
+    outline: 0;
+  }
+}
+.search__icon{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 12px;
+  width: 17px;
+  height: 16px;
+  cursor: pointer;
+  -webkit-transition: .1s;
+  transition: .1s;
+  img{
+    width: 20px;
+  }
+}
+.tabs{
+  position: relative;
+  text-align: left;
+  font-size: 0;
+  margin-bottom: 15px;
+  &__item{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    cursor: pointer;
+    padding: 18px 60px;
+    position: relative;
+    -webkit-transition: .2s;
+    transition: .2s;
+    color: #000;
+    font-weight: normal;
+    font-family: Verdana, sans-serif;
+    text-transform: capitalize;
+    font-size: 18pt;
+    text-align: center;
+    width: 50%;
+    &.active{
+      border-bottom: 5px solid yellow;
+    }
+  }
+}

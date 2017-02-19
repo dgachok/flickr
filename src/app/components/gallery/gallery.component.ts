@@ -17,7 +17,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleStore(image) {
+  toggleStore(image):void {
     let toggle = false;
     let store = this.searchService.store.filter((el) => {
       if (el.id == image.id) toggle = true;
