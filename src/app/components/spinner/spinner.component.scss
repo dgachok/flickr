@@ -9,20 +9,18 @@
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 5px solid fade(#29bd10, 10%);
-  border-right: 5px solid fade(#29bd10, 10%);
-  border-bottom: 5px solid fade(#29bd10, 10%);
-  border-left: 5px solid #29bd10;
+  border: 5px solid #d3d3d3;
+  border-left-color: #8aacb8;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-animation: load8 0.8s infinite linear;
-  animation: load8 0.8s infinite linear;
+  -webkit-animation: load 0.8s infinite linear;
+  animation: load 0.8s infinite linear;
   &.no-margins {
     margin: 15px auto;
 }
 }
-@-webkit-keyframes load8 {
+@-webkit-keyframes load {
 0% {
 -webkit-transform: rotate(0deg);
 transform: rotate(0deg);
@@ -32,7 +30,7 @@ transform: rotate(0deg);
 transform: rotate(360deg);
 }
 }
-@keyframes load8 {
+@keyframes load {
 0% {
 -webkit-transform: rotate(0deg);
 transform: rotate(0deg);
