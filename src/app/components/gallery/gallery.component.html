@@ -5,7 +5,7 @@
          src="https://farm{{image['farm']}}.staticflickr.com/{{image['server']}}/{{image['id']}}_{{image['secret']}}_m.jpg">
     <div class="item__title">{{image['title']}}</div>
   </div>
-  <div *ngIf="!images.length" class="type">No photos. Try type any in the field</div>
+  <div *ngIf="!images.length" class="type">No photos. Type any in the field</div>
 </div>
 <spinner *ngIf="searchService.spinner"></spinner>
 
