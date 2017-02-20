@@ -12,15 +12,16 @@ import {AuthService} from "./services/auth.service";
 })
 export class AppComponent implements OnInit{
 
-  private AUTH_LINK = 'http://www.flickr.com/services/auth/?api_key='+ API_KEY + '&perms=write&api_sig='+ API_SIG;
+  private AUTH_LINK: string = 'http://www.flickr.com/services/auth/?api_key='+ API_KEY + '&perms=write&api_sig='+ API_SIG;
+  private frob: string;
 
   constructor(private searchService: SearchService, private router: Router, private authService:AuthService) {
   }
 
   ngOnInit(){
-    let frob = getParamFromUrl('frob');
-    let sign = Md5.hashStr(API_SECRET + 'api_key' + API_KEY + 'frob' + frob + 'methodflickr.auth.getToken');
-    this.authService.getToken(frob, sign);
+    this.frob = getParamFromUrl('frob');
+    let sign = Md5.hashStr(API_SECRET + 'api_key' + API_KEY + 'formatjson' + 'frob' + this.frob +'methodflickr.auth.getToken'+'nojsoncallback1');
+    if(this.frob) this.authService.getToken(this.frob, sign);
   }
 
   search(e, query) {

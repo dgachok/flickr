@@ -11,13 +11,16 @@ export class AuthService {
 
   public user: User = <User>{
     api: API_KEY,
-    token: ''
+    getToken(){
+      return localStorage.getItem('token');
+    }
   };
 
   getToken(frob, sign) {
-    let url = `https://api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=${API_KEY}&frob=${frob}&api_sig=${sign}`;
+    let url = `https://api.flickr.com/services/rest/?method=flickr.auth.getToken&api_key=${API_KEY}&frob=${frob}&api_sig=${sign}&format=json&nojsoncallback=1`;
     return this.http.get(url).subscribe(data => {
-      console.log(data, 'data');
+      localStorage.setItem('token', data.json().auth['token']['_content']);
+      this.user = Object.assign(this.user, data.json().auth['user']);
       return data;
     });
   }
