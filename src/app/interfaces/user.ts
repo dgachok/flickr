@@ -4,5 +4,5 @@ export interface User {
   fullName?: string;
   nsid?: string;
   api: string;
-  (): any;
+  getToken():string;
 }
