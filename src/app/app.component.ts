@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchService} from "./services/search.service";
-import {API_KEY, API_SIG, getParamFromUrl, API_SECRET} from "./shared/global";
+import {API_KEY, API_SIG, getParamFromUrl} from "./shared/global";
 import {Router} from "@angular/router";
-import {Md5} from "ts-md5/dist/md5";
 import {AuthService} from "./services/auth.service";
 
 @Component({
@@ -10,18 +9,16 @@ import {AuthService} from "./services/auth.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  private AUTH_LINK: string = 'http://www.flickr.com/services/auth/?api_key='+ API_KEY + '&perms=write&api_sig='+ API_SIG;
-  private frob: string;
+  private AUTH_LINK: string = 'http://www.flickr.com/services/auth/?api_key=' + API_KEY + '&perms=write&api_sig=' + API_SIG;
 
-  constructor(private searchService: SearchService, private router: Router, private authService:AuthService) {
+  constructor(private searchService: SearchService, private router: Router, private authService: AuthService) {
   }
 
-  ngOnInit(){
-    this.frob = getParamFromUrl('frob');
-    let sign = Md5.hashStr(API_SECRET + 'api_key' + API_KEY + 'formatjson' + 'frob' + this.frob +'methodflickr.auth.getToken'+'nojsoncallback1');
-    if(this.frob) this.authService.getToken(this.frob, sign);
+  ngOnInit() {
+    this.authService.user['frob'] = getParamFromUrl('frob');
+    if (this.authService.user['frob']) this.authService.getToken().subscribe(data => this.searchService.getFavoritesPhotos());
   }
 
   search(e, query) {

@@ -21,9 +21,17 @@ export class GalleryComponent implements OnInit {
     image['active'] = !image['active'];
     let toggle = false;
     let store = this.searchService.store.filter((el) => {
-      if (el.id == image.id) toggle = true;
+      if (el.id == image.id) {
+        this.searchService.removeFavoritesPhotosById(image.id);
+        toggle = true;
+      }
       return el.id != image.id;
     });
-    (toggle) ? this.searchService.store = store : this.searchService.store.push(image);
+    if (toggle) {
+      this.searchService.store = store;
+    } else {
+      this.searchService.store.push(image);
+      this.searchService.addFavoritesPhotosById(image.id);
+    }
   }
 }
