@@ -16,7 +16,7 @@ export class SearchService {
   getImages(query: string){
     let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${API_KEY}&tags=${query}&per_page=12&format=json&nojsoncallback=1`;
     return this.http.get(url).map(data => {
-      this.gallery = Object.assign(this.gallery, data.json().photos.photo);
+      this.gallery = data.json().photos.photo;
       this.spinner = false;
       return data;
     });

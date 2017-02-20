@@ -1,17 +1,18 @@
 <div class="wrapper">
   <div class="header">
     <div class="header__content">
-    <h1>
-      Flickr for Playtech
-    </h1>
-    <a class="login" href="{{AUTH_LINK}}">Login</a>
-  </div>
+      <h1>
+        Flickr for Playtech
+      </h1>
+      <a class="login" href="{{AUTH_LINK}}">Login</a>
+    </div>
   </div>
   <div class="wrapper__content">
     <div class="container">
       <div class="search__wrapper">
         <input class="search" #searchValue (keypress)="search($event, searchValue.value)">
-        <span class="search__icon" (click)="search($event, searchValue.value)"><img src="../assets/icons/search.png"></span>
+        <span class="search__icon" (click)="search($event, searchValue.value)"><img
+          src="../assets/icons/search.png"></span>
       </div>
       <div class="tabs">
         <a class="tabs__item" routerLink="/home" routerLinkActive="active">Home</a>

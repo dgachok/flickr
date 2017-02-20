@@ -1,23 +1,25 @@
 @import "app/shared/scss/reset";
 
-
 // Global fonts
 *, *:after, *:before {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
 
-h1{
+h1 {
   font-size: 25pt;
   font-weight: bold;
 }
-h2{
+
+h2 {
   font-size: 20pt;
   line-height: 30pt;
 }
-a{
+
+a {
   text-decoration: none;
 }
-.margin_bottom_10{
+
+.margin_bottom_10 {
   margin-bottom: 10px;
 }

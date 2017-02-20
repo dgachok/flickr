@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SearchService} from "../../services/search.service"
 
 @Component({
@@ -9,9 +9,10 @@ import {SearchService} from "../../services/search.service"
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private searchService : SearchService) { }
+  constructor(private searchService: SearchService) {
+  }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+  }
 
 }

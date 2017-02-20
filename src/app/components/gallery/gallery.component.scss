@@ -1,10 +1,10 @@
-.gallery{
+.gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
-  &__item{
+  &__item {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -18,15 +18,19 @@
     transition: .3s;
     text-align: center;
     @media screen and (min-width: 900px) {
+      width: 30%;
       max-width: 33%;
     }
-    .item__img{
+    &.select {
+      outline: 5px solid yellow;
+    }
+    .item__img {
       height: 100%;
       width: 100%;
       object-fit: cover;
       margin-bottom: 5px;
     }
-    .item__title{
+    .item__title {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -35,7 +39,8 @@
     }
   }
 }
-.type{
+
+.type {
   text-align: center;
   width: 100%;
   display: block;
