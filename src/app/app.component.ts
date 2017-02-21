@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (getParamFromUrl('frob')) this.authService.getToken().subscribe(data => this.searchService.getFavoritesPhotos());
+    this.authService.user['frob'] = getParamFromUrl('frob');
+    if (this.authService.user['frob']) this.authService.getToken().subscribe(data => this.searchService.getFavoritesPhotos());
   }
 
   search(e, query) {
