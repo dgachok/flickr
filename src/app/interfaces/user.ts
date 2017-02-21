@@ -4,6 +4,5 @@ export interface User {
   fullName?: string;
   nsid?: string;
   api: string;
-  frob: string;
   token():string;
 }
